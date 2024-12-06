@@ -1,0 +1,221 @@
+#! /bin/bash
+
+<<comments
+x=2
+name="youssef"
+
+echo "${x}jkvdbdb" #comment
+echo ${x}${name}
+
+echo "enter your name: "
+read name
+echo "your name is: ${name}"
+printf "ayman\t shkko\n"
+#echo "enter your pass"
+read -sp "enter your pass \n" pass
+echo "your password is: ${pass}"
+
+if [ 1 -eq 1 ]
+then
+	echo "equal"
+else
+	echo "not equal"
+fi
+
+echo "enter haga"
+read test
+if [ $test -z "" ]
+then 
+	echo "empty"
+else
+	echo "not empty"
+fi
+# session 2
+
+arr=("ddhbehbfe eee")
+typeset -i number=10
+typeset -a list=(55 100 1 28)
+typeset  name="youssef"
+#ways to defined variables
+echo "$number"
+echo "$list"
+echo "$name"
+echo "${#list[@]}" #length of the list
+echo ${list[@]}
+echo ${list[*]} #same as above line
+echo ${#list[*]}
+declare -a arrayname={ahmed youssef awad}
+
+### loops
+set -x #debug mood
+for i in {1..10}
+do
+	echo "element is ${i}"
+done
+
+set +x
+
+array='ls .'
+lss=${ls}
+for i in $lss
+do
+	echo $i
+	cat $i
+done
+
+input=yes
+case $input in
+
+	YES||)
+		echo "yes"
+##############
+comments
+x=2
+y=8
+z= expr 1 + 2
+echo $z
+z=$(( $x + $y ))
+echo $z
+********************************************
+#! /bin/bash
+
+function test()
+{
+echo "hamada"
+}
+<<comments
+test1()
+{
+echo "hamada"
+}
+test1
+test
+
+## func to add 2 num
+add()
+{
+	sum=$(($1+$2))
+	return $sum
+}
+add $1 $2
+res=$?
+echo $res
+comments
+<<comments2
+add()
+{
+sum=$(($1+$2))
+eval $sum
+}
+add $1 $2
+echo $sum
+comments2
+<<com3
+name="youssef"
+displayglobal()
+{
+name="ahmed"
+echo $name
+}
+echo "before $name"
+displayglobal
+echo "after after func-> $name"
+
+echo "*"
+displaylocal()
+{
+local name="mohamed"
+echo $name
+}
+echo "before $name"
+displaylocal
+echo "after func-> $name"
+echo "8888888888888888888888888888888888888888888888888888888"
+x=10
+echo $x
+x=5
+readonly x
+echo $x
+x=8
+echo $x
+com3
+<<com
+Hi()
+{
+echo "hello"
+}
+Hi
+readonly -f Hi
+
+Hi()
+{
+echo "hhhhh"
+}
+Hi
+com
+<<con
+#####select
+####3create menu
+select name in youssef ashraf elnaggar back
+do
+	case $name in
+		youssef)
+		echo "hi $name"
+		;;
+		ashraf)
+		echo "hi $name"
+		;;
+		elnaggar)
+		echo "hi $name"
+		;;
+		back)
+		echo "please choose from the menu"
+		;;
+		*)
+		echo "wrong input" 
+		break
+		;;
+	esac
+done
+con
+**************************
+#! /bin/bash
+
+input()
+{
+read -p "number 1:" num1
+read -p "number 2:" num2
+}
+
+cal()
+{
+	echo "$num1 $1 $num2" | bc
+}
+select operation in add sub multiply divide quit
+do
+	case $operation in
+		add)
+			input
+			echo "$num1 + $num2" | bc
+			cal "+"
+			;;
+		sub)
+			input
+			echo "$num1 - $num2" | bc
+			cal "-"
+			;;
+		multiply)
+			input
+			echo "$num1 * $num2" | bc
+			cal "*"
+			;;
+		divide)
+			input
+			echo "$num1 /  $num2" | bc
+			cal "/"
+			;;
+		quit)
+			break
+			;;
+	esac
+done

@@ -1,0 +1,32 @@
+linux: open source OS
+
+more utilities and ditribtuions tn Itnux useful for security than windows
+more usable with servers (red hat, sentos, etc)
+
+open source: can make modifications and see any updates and make enhancement on it.
+-> can be free or have some licence.
+
+Linux components:
+kernel-> core of operating system, contains components like device drivers.
+shell -> interpreter translates the commands to kernel.(bash most commonly used on shell linux)
+terminal-> Ui to write your commands
+
+
+ctrl c -> to terminate the command(if it takes to long)
+ctrl z -> stopped or throw it in background.
+
+
+man -> manual to know anything or how the command doing
+man ls 
+
+help-> make you know how to use it with options and arguments
+ls --help
+
+whais->
+whatis ls
+
+
+////////////////
+directories tree:
+/etc/ -> all configurations files
+/mnt/ -> mounting ; start to read device and make endpoint to access with ui.
